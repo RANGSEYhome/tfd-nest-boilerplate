@@ -21,7 +21,7 @@ import { RolesGuard } from '../modules/common/guard/roles.guard';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
-        if (process.env.NODE_ENV === 'dev') {
+        if (process.env.NODE_ENV === 'development') {
           return {
             type: configService.get<string>('DB_TYPE'),
             host: configService.get<string>('DB_HOST'),
@@ -60,7 +60,7 @@ import { RolesGuard } from '../modules/common/guard/roles.guard';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
-        if (process.env.NODE_ENV === 'dev') {
+        if (process.env.NODE_ENV === 'development') {
           return {
             ttl: configService.get<string>('CACHE_TTL'), // seconds
             max: configService.get<string>('CACHE_MAX'), // maximum number of items in cache
