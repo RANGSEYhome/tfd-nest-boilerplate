@@ -56,7 +56,7 @@ export class AuthController {
   
   // rph start
   // Add Public decorator to allow access to this endpoint without authentication
-  //@Public()
+  @Public()
   // rph end
 
   @ApiBearerAuth()
