@@ -53,6 +53,11 @@ export class AuthController {
    * Register user
    * @param payload register payload
    */
+  
+  // Add Public decorator to allow access to this endpoint without authentication
+  @Public()
+  // End
+
   @ApiBearerAuth()
   @Post('register')
   @ApiResponse({ status: 201, description: 'Successful Registration' })
