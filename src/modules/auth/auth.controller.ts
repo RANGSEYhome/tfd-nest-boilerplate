@@ -54,9 +54,10 @@ export class AuthController {
    * @param payload register payload
    */
   
+  // rph start
   // Add Public decorator to allow access to this endpoint without authentication
   @Public()
-  // End
+  // rph end
 
   @ApiBearerAuth()
   @Post('register')
